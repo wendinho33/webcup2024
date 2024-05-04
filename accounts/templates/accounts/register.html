@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Register{% endblock title %}
+{% block main %}
+
+<div class="row justify-content-center">
+    <div class="col-md-9 col-lg-12 col-xl-10">
+        <div class="card shadow-lg o-hidden border-0 my-5">
+            <div class="card-body p-0">
+                <div class="row">
+                    <div class="col-lg-6 d-none d-lg-flex">
+                        <div class="flex-grow-1 bg-login-image" style="background-image: url(&quot;/static/img/login.png&quot;);"></div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h4 class="text-dark mb-4">Register</h4>
+                            </div>
+                            <form class="user">
+                                <div class="mb-3">{% include "forms.html" %}</div>
+                                <hr>
+                                <button class="btn btn-primary d-block btn-user w-100" type="submit">Register</button>
+                                <hr>
+                            </form>
+                            <div class="text-center"><a class="small" href="forgot-password.html">Forgot Password?</a></div>
+                            <div class="text-center"><a class="small" href="{% url "login" %}">Login</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+
+
+    #id_username{
+    font-size: .8rem;
+    border-radius: 10rem;
+    padding: .75rem 1rem;
+}
+#id_password{
+    font-size: .8rem;
+    border-radius: 10rem;
+    padding: .75rem 1rem;
+}
+
+form.user .btn-user {
+    font-size: 0.8rem;
+    border-radius: 10rem;
+    padding: 0.75rem 1rem;
+}
+
+{% endblock main %}
+

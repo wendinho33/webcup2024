@@ -28,12 +28,17 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'accounts',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'pwa',
+    "crispy_forms",
+    "crispy_bootstrap5",
+
 ]
 
 MIDDLEWARE = [
@@ -121,3 +126,39 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [
     STATIC_DIR,
 ]
+
+
+PWA_APP_NAME = 'ANGELWATCH'
+PWA_APP_DESCRIPTION = "We listen, we care, we deliver"
+PWA_APP_THEME_COLOR = '#29ABE2'
+PWA_APP_BACKGROUND_COLOR = '#FBC926'
+PWA_APP_DISPLAY = 'standalone'
+PWA_APP_SCOPE = '/'
+PWA_APP_ORIENTATION = 'portrait'
+PWA_APP_START_URL = '/'
+PWA_APP_STATUS_BAR_COLOR = 'default'
+PWA_APP_ICONS = [
+    {
+        'src': '/static/img/logo1.png',
+        'sizes': '200x200'
+    }
+]
+PWA_APP_ICONS_APPLE = [
+    {
+        'src': '/static/logo/logo2.png',
+        'sizes': '160x160'
+    }
+]
+PWA_APP_SPLASH_SCREEN = [
+    {
+        'src': '/static/logo/logo-200x200.png',
+        'media': '(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)'
+    }
+]
+PWA_APP_DIR = 'ltr'
+PWA_APP_LANG = 'en-US'
+
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"

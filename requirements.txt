@@ -1,0 +1,8 @@
+asgiref==3.8.1
+crispy-bootstrap5==2024.2
+Django==5.0.4
+django-allauth==0.62.1
+django-crispy-forms==2.1
+django-pwa @ git+https://github.com/wendinho33/django-pwa-master.git@10f524ee5a8328175bc8665768ee0c3908a65ec7
+pillow==10.3.0
+sqlparse==0.5.0

@@ -1,5 +1,39 @@
 {% load static %}
 
 <script src="{% static "js/jquery.min.js" %}"></script>
+<script src="{% static "js/bootstrap.min.js" %}"></script>
+<script src="{% static "js/angency.js" %}"></script>
 <script src="{% static "js/loader.js" %}"></script>
 <script src="{% static "js/sweetalert2.all.min.js" %}"></script>
+
+{% if not request.user.is_authenticated %}
+    <script type="text/javascript" src="https://otpless.com/auth.js"></script>
+{% endif %}
+
+
+
+<!-- OTP less -->
+<script type="text/javascript">
+    function otpless(otplessUser) {
+     var waName = otplessUser.waName;
+     var waNumber = otplessUser.waNumber;
+     $.ajax({
+          type: "GET",
+          url: '/whatsapp-login/',
+          data: {
+              "waName": waName,
+              "waNumber":waNumber,
+          },
+          dataType: "json",
+          success: function (data) {
+              // any process in data
+              
+              window.location.assign('{% url "home" %}');
+          },
+          failure: function () {
+              alert("failure");
+          }
+      });
+      window.location.href="{% url 'home' %}";
+    }
+  </script>
