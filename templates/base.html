@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+{% load pwa %}
+<html lang="en">
+<head>
+    {% progressive_web_app_meta %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0, viewport-fit=cover">
+    <title>{% block title %}{% endblock title %}</title>
+    {% include "css.html" %}
+</head>
+<body>
+    {% include "header.html" %}
+    {% include "spinner.html" %}
+    <div class='content-wrapper'>
+        <div class="container-xxl flex-grow-1 container-p-y" id="content-div" hx-history-elt>
+        {% block main %}{% endblock main %}  
+        </div>
+    </div>
+{% include "js.html" %}
+{% include "footer.html" %}  
+</body>
+</html>

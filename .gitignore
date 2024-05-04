@@ -1,0 +1,9 @@
+env/
+.idea/
+__pycache__/
+*.py[cod]
+db.sqlite3
+*.log
+*.pot
+*.pyc
+media/
