@@ -102,3 +102,7 @@ class Contact_Us(CreateView, SuccessMessageMixin):
 
 def about_us(request):
     return render(request, 'accounts/about.html')
+
+
+def product(request):
+    return render(request, 'accounts/products.html')
