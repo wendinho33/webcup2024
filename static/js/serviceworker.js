@@ -12,8 +12,8 @@ self.addEventListener('install', function(event) {
 self.addEventListener('fetch', function(event) {
   var requestUrl = new URL(event.request.url);
     if (requestUrl.origin === location.origin) {
-      if ((requestUrl.pathname === '/')) {
-        event.respondWith(caches.match('/'));
+      if ((requestUrl.pathname === 'home')) {
+        event.respondWith(caches.match('home'));
         return;
       }
     }

@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 {% block title %}Register{% endblock title %}
 {% block main %}
-
+<br>
+<br>
+<br>
 <div class="row justify-content-center">
     <div class="col-md-9 col-lg-12 col-xl-10">
         <div class="card shadow-lg o-hidden border-0 my-5">
@@ -15,7 +17,7 @@
                             <div class="text-center">
                                 <h4 class="text-dark mb-4">Register</h4>
                             </div>
-                            <form class="user">
+                            <form class="user" method="post">
                                 <div class="mb-3">{% include "forms.html" %}</div>
                                 <hr>
                                 <button class="btn btn-primary d-block btn-user w-100" type="submit">Register</button>
@@ -34,12 +36,31 @@
 <style>
 
 
-    #id_username{
+#id_username{
+    font-size: .8rem;
+    border-radius: 10rem;
+    padding: .75rem 1rem;
+}   
+#id_first_name{
+    font-size: .8rem;
+    border-radius: 10rem;
+    padding: .75rem 1rem;
+}   #id_last_name{
+    font-size: .8rem;
+    border-radius: 10rem;
+    padding: .75rem 1rem;
+}
+#id_email{
     font-size: .8rem;
     border-radius: 10rem;
     padding: .75rem 1rem;
 }
 #id_password{
+    font-size: .8rem;
+    border-radius: 10rem;
+    padding: .75rem 1rem;
+}
+#id_password2{
     font-size: .8rem;
     border-radius: 10rem;
     padding: .75rem 1rem;

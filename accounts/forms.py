@@ -1,5 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
+from accounts.models import Contact
 
 class LoginForm(forms.Form):
     username = forms.CharField(label='', widget=forms.TextInput(attrs={'placeholder':'Enter Your Usernamae'}))
@@ -40,3 +41,11 @@ class RegisterForm(forms.ModelForm):
         if User.objects.filter(email=data1).exists():
             raise forms.ValidationError('Email already exists')
         return data1
+    
+
+class ContactForm(forms.ModelForm):
+    name = forms.CharField(label='', widget=forms.TextInput(attrs={'placeholder':'Enter Your Name'}))
+    email = forms.CharField(label='', widget=forms.EmailInput(attrs={'placeholder':'Enter a Valid Email'}))
+    class Meta:
+        model = Contact
+        fields = ['name', 'email', 'message',]

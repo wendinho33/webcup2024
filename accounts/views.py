@@ -1,9 +1,12 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
+from django.views.generic import CreateView
 from django.contrib import messages
-from accounts.forms import LoginForm, RegisterForm
+from accounts.forms import LoginForm, RegisterForm, ContactForm
 from django.contrib import messages
 from django.contrib.auth.models import User
+from django.urls import reverse_lazy
+from django.contrib.messages.views import SuccessMessageMixin
 
 def user_login(request):
     if request.method == 'POST':
@@ -18,8 +21,11 @@ def user_login(request):
                 messages.success(request, 'welcome' + ' ', request.user.username)
                 return redirect('home')
             else:
+                messages.warning(request, 'please try again!')
                 return redirect('login')
-        return redirect('login')
+        else:
+            messages.error(request, 'please contact admin!!')
+            return redirect('login')
     else:
         form = LoginForm()
         cx = {'form': form }
@@ -47,6 +53,12 @@ def user_register(request):
         template_name = 'accounts/register.html'
         return render(request,template_name, cx)
     
+
+
+def index_view(request):
+    template_name = 'accounts/index.html'
+    return render(request, template_name)
+
 
 def whatsapp_login(request):
     waName = request.GET.get("waName")
@@ -79,6 +91,14 @@ def whatsapp_login(request):
             return redirect("home")
     return render(request, "accounts/register.html")
 
-def index_view(request):
-    template_name = 'accounts/index.html'
-    return render(request, template_name)
+
+
+class Contact_Us(CreateView, SuccessMessageMixin):
+    form_class = ContactForm
+    template_name = 'accounts/contact.html'
+    success_message = 'Your message has been sent successfully'
+    success_url = reverse_lazy('home')
+
+
+def about_us(request):
+    return render(request, 'accounts/about.html')

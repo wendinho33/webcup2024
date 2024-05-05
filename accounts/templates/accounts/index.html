@@ -1,5 +1,156 @@
 {% extends "base.html" %}
 {% block title %}Home{% endblock title %}
 {% block main %}
+<header class="text-center text-white d-flex masthead" style="background: url(&quot;/static/img/Artboard_3.jpg&quot;);">
+    <div class="container my-auto">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h1 class="text-uppercase angel" id='title_angel'></h1>
+                <hr>
+            </div>
+        </div>
+        <div class="col-lg-8 mx-auto">
+            <p class="text-faded mb-5" id='accroche'>We Listen, We Care, We Deliver</p>
+            {% if not request.user.is_authenticated %}
+            <a class="btn btn-primary btn-xl" role="button" href="{% url "login" %}" style="background: var(--bs-success);">BUY NOW</a>
+            {% else %}
+            <a class="btn btn-primary btn-xl" role="button" href="" style="background: var(--bs-success);">BUY NOW</a>
 
+            {% endif %}
+        </div>
+    </div>
+</header>
+<section id="about" class="bg-primary">
+    <div class="container">
+        <div class="row">
+            <div class="col offset-lg-8 text-center mx-auto">
+                <h2 class="text-white section-heading">Welcome to Angel Watch!!</h2>
+                <hr class="light my-4">
+                <p class="text-faded mb-4">Have you ever wondered how comforting it would be to have a guardian angel watching over you 24/7, providing the security and peace of mind you've always yearned for? Welcome to the world of the Angel Watch , your personal digital guardian angel. Angel Watch is a revolutionary app that goes beyond the ordinary, offering an array of features designed to cater to your physical and mental well-being. This ingenious app is not just about health monitoring, it's about creating an ecosystem of care and security around you.</p><a class="btn btn-light btn-xl" role="button" href="#services">Get Started!</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">At Your Service</h2>
+                <hr class="my-4">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-lg-3 text-center">
+                <div class="mx-auto service-box mt-5"><i class="fa fa-diamond fa-4x text-primary mb-3 sr-icons" data-aos="zoom-in" data-aos-duration="200" data-aos-once="true"></i>
+                    <h3 class="mb-3">Premium Product</h3>
+                    <p class="text-muted mb-0">ANGEL WATCH BASS Revolutionary Product , that goes beyond the ordinary, offering arrays of features designed to cater to your physical and mental well-being.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 text-center">
+                <div class="mx-auto service-box mt-5"><i class="fa fa-paper-plane fa-4x text-primary mb-3 sr-icons" data-aos="zoom-in" data-aos-duration="200" data-aos-delay="200" data-aos-once="true"></i>
+                    <h3 class="mb-3">Ready to Ship</h3>
+                    <p class="text-muted mb-0">ANGEL WATCH BASS , can be shipped all around the world. Delivery assured through our contract with DHL.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 text-center">
+                <div class="mx-auto service-box mt-5"><i class="fa fa-newspaper-o fa-4x text-primary mb-3 sr-icons" data-aos="zoom-in" data-aos-duration="200" data-aos-delay="400" data-aos-once="true"></i>
+                    <h3 class="mb-3">Up to Date</h3>
+                    <p class="text-muted mb-0">Your Mental and physical Health is very important, so we always keep our product up to date , through our AI integrated platform , that will help you to feel confortable with Life.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 text-center">
+                <div class="mx-auto service-box mt-5"><i class="fa fa-heart fa-4x text-primary mb-3 sr-icons" data-aos="fade" data-aos-duration="200" data-aos-delay="600" data-aos-once="true"></i>
+                    <h3 class="mb-3">Made with Love</h3>
+                    <p class="text-muted mb-0">Designed with eco-friendly materials, we create the product with love, so that you also will love the angels that will help you to release stress.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="portfolio" class="p-0">
+    <div class="container-fluid p-0">
+        <div class="row g-0 popup-gallery">
+            <div class="col-sm-6 col-lg-4"><a class="portfolio-box" href="/static/img/thumbnails/artboard.jpg"><img class="img-fluid" src="/static/img/thumbnails/artboard.jpg">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded"><span>WE Designed the best Product</span></div>
+                            <div class="project-name"><span>ANGEL WATCH BASS</span></div>
+                        </div>
+                    </div>
+                </a></div>
+            <div class="col-sm-6 col-lg-4"><a class="portfolio-box" href="/static/img/thumbnails/artboart_0.jpg"><img class="img-fluid" src="/static/img/thumbnails/artboart_0.jpg">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded"><span>An App To mOnitor Your Health</span></div>
+                            <div class="project-name"><span>We have developed the product for you , with You</span></div>
+                        </div>
+                    </div>
+                </a></div>
+            <div class="col-sm-6 col-lg-4"><a class="portfolio-box" href="/static/img/thumbnails/artboard_2.jpg"><img class="img-fluid" src="/static/img/thumbnails/artboard_2.jpg">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded"><span>PORtaBle</span></div>
+                            <div class="project-name"><span>Anywhere , Anytime, Your guardian is with You</span></div>
+                        </div>
+                    </div>
+                </a></div>
+            <div class="col-sm-6 col-lg-4"><a class="portfolio-box" href="/static/img/thumbnails/artboard_4.jpg"><img class="img-fluid" src="/static/img/thumbnails/artboard_4.jpg">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded"><span>SUrround</span></div>
+                            <div class="project-name"><span>Powered By Dolby Atmos</span></div>
+                        </div>
+                    </div>
+                </a></div>
+            <div class="col-sm-6 col-lg-4"><a class="portfolio-box" href="static/img/thumbnails/artboard_5.jpg"><img class="img-fluid" src="static/img/thumbnails/artboard_5.jpg">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded"><span>SENSOR</span></div>
+                            <div class="project-name"><span>Your Emotions Control the&nbsp; Device</span></div>
+                        </div>
+                    </div>
+                </a></div>
+            <div class="col-sm-6 col-lg-4"><a class="portfolio-box" href="static/img/thumbnails/artboard_3.jpg"><img class="img-fluid" src="static/img/thumbnails/artboard_3.jpg">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded"><span>Peace of Mind</span></div>
+                            <div class="project-name"><span>Beacause Your Mental Health Matters</span></div>
+                        </div>
+                    </div>
+                </a></div>
+        </div>
+    </div>
+</section>
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 text-center mx-auto">
+                <h2 class="section-heading">Let's Get In Touch!</h2>
+                <hr class="my-4">
+                <p class="mb-5">ANGEL WATCH&nbsp; IS READY TO CHANGE THE WORLD!!!</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 text-center ms-auto"><i class="fa fa-phone fa-3x mb-3 sr-contact" data-aos="zoom-in" data-aos-duration="300" data-aos-once="true"></i>
+                <p>+230 599 9999</p>
+            </div>
+            <div class="col-lg-4 text-center me-auto"><i class="fa fa-envelope-o fa-3x mb-3 sr-contact" data-aos="zoom-in" data-aos-duration="300" data-aos-delay="300" data-aos-once="true"></i>
+                <p><a href="mailto:your-email@your-domain.com">weblonets@gmail.com</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+<style>
+
+    .angel{
+        color: red;
+    }
+
+    #accroche{
+        color: green;
+    }
+</style>
 {% endblock main %}
+

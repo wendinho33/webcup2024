@@ -1,19 +1,30 @@
 <!DOCTYPE html>
-{% load static %}
-{% load pwa %}
+
 <html lang="en">
+    {% load static %}
+{% load pwa %}
 <head>
     {% progressive_web_app_meta %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0, viewport-fit=cover">
     <title>ANGELWATCH | {% block title %}{% endblock title %}</title>
     {% include "css.html" %}
+    <script src='{% static "js/jquery.min.js" %}'></script>
 </head>
 <body>
-    {% include "header.html" %}
+    <script>
+
+$(window).on('load', function () {
+    $(".spinner-wrapper").fadeOut("slow");
+    
+});
+    </script>
+    
     {% include "spinner.html" %}
+    {% include "header.html" %}
+   
     <div class='content-wrapper'>
-        <div class="container-xxl flex-grow-1 container-p-y" id="content-div" hx-history-elt>
+        <div class="container-xxl flex-grow-1 container-p-y" id="content-div" >
         {% block main %}{% endblock main %}  
         </div>
     </div>
